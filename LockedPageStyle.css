@@ -54,3 +54,8 @@ div#bottom {
     margin: 0 auto;
     margin-top: 100px;
 }
+
+div#bottom > a {
+    text-decoration: none;
+    color: gray;
+}
