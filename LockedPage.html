@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <title>잠금모드</title>
     <link rel="stylesheet" href="LockedPageStyle.css">
-    <script src="LockedPageJS.js"></script>
+
 </head>
 <body>
     <!--전체 프레임-->
@@ -21,9 +21,9 @@
         <br/>
         <p id="showStatus">잠금모드 상태입니다.</p>
         <!--비밀번호입력-->
-        <form id="password" method="POST">
+        <form id="password" method="POST" action="LockedPageJS.js">
             <input type="password" id="pwField" placeholder="비밀번호"/><br/>
-            <input type="button" id="confirm" value="확인"/>
+            <input type="submit" id="confirm" value="확인"/>
         </form>
         <div id="bottom">
             <a href="ResetPW.html" id="resetPWLink">비밀번호 재설정</a>
