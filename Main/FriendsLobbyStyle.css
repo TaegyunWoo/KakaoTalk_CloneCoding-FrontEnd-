@@ -1,0 +1,51 @@
+body {
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+}
+
+#menu {
+    background-color: rgb(206, 206, 206);
+    height: 700px;
+    border-style: inset;
+}
+
+img.menu.user {
+    margin-top: 45px;
+    width: 70px;
+}
+
+#friendList {
+    margin-left: 20px;
+}
+
+#menu > img.menu {
+    width: 40px;
+    height: 40px;
+    margin: 40px auto;
+    display: block;
+    
+}
+
+#friendHeader > p.title {
+    float: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.header {
+    margin-top: 10px;
+}
+
+img.header {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    float: right;
+}

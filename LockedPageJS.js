@@ -32,7 +32,7 @@ window.onload = function() {
         var userInfo = getUserInfoJson();
 
         if(pwValue == userInfo.password) {
-            location.replace("ChatRoomsLobby.html");
+            location.replace("../ChatRoomsLobby.html");
         } else {
             alert("비밀번호를 확인해주세요.");
         }
