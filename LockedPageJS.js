@@ -9,7 +9,6 @@ window.onload = function() {
             if(req.readyState == 4) {
                 if(req.status == 200) {
                     userInfo = JSON.parse(req.responseText);
-                    console.log(userInfo);
                 }
             }
         };
@@ -30,7 +29,7 @@ window.onload = function() {
     function lockedLoginEvent(e) {
         var pwValue = pwField.value;
         var userInfo = getUserInfoJson();
-        console.log(userInfo.password);
+        
         if(pwValue == userInfo.password) {
             location.replace("ChatRoomsLobby.html");
         } else {
