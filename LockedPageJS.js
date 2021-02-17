@@ -15,7 +15,7 @@ window.onload = function() {
         
         req.open("GET", "userInfo.json", false);
         req.send(null);
-        console.log();
+        
         return userInfo;
     }
     
