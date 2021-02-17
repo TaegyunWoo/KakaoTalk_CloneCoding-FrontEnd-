@@ -12,7 +12,7 @@ window.onload = function() {
             }
         }
 
-        req.open("GET", "../LockedPageJS.js");
+        req.open("GET", "../userInfo.json", false);
         req.send(null);
         return userInfo;
     }
