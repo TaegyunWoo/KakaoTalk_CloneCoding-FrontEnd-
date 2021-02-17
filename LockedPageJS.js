@@ -10,13 +10,14 @@ window.onload = function() {
                 if(req.status == 200) {
                     userInfo = JSON.parse(req.responseText);
                     console.log(userInfo);
-                    return userInfo;
                 }
             }
         };
         
         req.open("GET", "userInfo.json", false);
         req.send(null);
+
+        return userInfo;
     }
     
     //잠금모드 로그인 이벤트 처리 (only 비밀번호)
@@ -29,6 +30,7 @@ window.onload = function() {
     function lockedLoginEvent(e) {
         var pwValue = pwField.value;
         var userInfo = getUserInfoJson();
+        console.log(userInfo.password);
         if(pwValue == userInfo.password) {
             location.replace("ChatRoomsLobby.html");
         } else {
