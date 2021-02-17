@@ -24,6 +24,7 @@ window.onload = function() {
     var confirmBtn = document.querySelector("form > input#confirm");
     console.log(confirmBtn);
     confirmBtn.addEventListener("click", lockedLoginEvent);
+    pwField.addEventListener("keydown", enterLoginEvent);
     
     //잠금모드 로그인 이벤트리스너
     function lockedLoginEvent(e) {
@@ -36,6 +37,13 @@ window.onload = function() {
             alert("비밀번호를 확인해주세요.");
         }
         
+    }
+
+    //엔터 이벤트
+    function enterLoginEvent(e) {
+        if(e.key == "Enter") {
+            lockedLoginEvent(e);
+        }
     }
 
 };
