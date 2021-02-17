@@ -15,7 +15,7 @@ window.onload = function() {
         
         req.open("GET", "userInfo.json", false);
         req.send(null);
-
+        console.log();
         return userInfo;
     }
     
@@ -29,7 +29,7 @@ window.onload = function() {
     function lockedLoginEvent(e) {
         var pwValue = pwField.value;
         var userInfo = getUserInfoJson();
-        
+
         if(pwValue == userInfo.password) {
             location.replace("ChatRoomsLobby.html");
         } else {
