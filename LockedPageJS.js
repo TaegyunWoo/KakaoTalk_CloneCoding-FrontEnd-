@@ -7,8 +7,9 @@ window.onload = function() {
         req.onreadystatechange = function() {
             if(req.readyState == 4) {
                 if(req.status == 200) {
-                    userInfo = req.responseText;
-                    console.log(userInfo);
+                    userInfo = req.response;
+                    console.log(`JSON: ${userInfo}`)
+                    return userInfo;
                 }
             }
         };
@@ -16,7 +17,6 @@ window.onload = function() {
         req.open("GET", "userInfo.json", false);
         req.send(null);
     }
-    getUserInfoJson();
 
     //잠금모드 로그인 이벤트 처리 (only 비밀번호)
     var pwField = document.getElementById("pwField");
@@ -27,7 +27,8 @@ window.onload = function() {
     //잠금모드 로그인 이벤트리스너
     function lockedLoginEvent(e) {
         var pwValue = pwField.value;
-        
+        var userInfo = getUserInfoJson();
+
         
     }
 
