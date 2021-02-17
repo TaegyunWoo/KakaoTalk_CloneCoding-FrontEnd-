@@ -9,6 +9,7 @@ window.onload = function() {
             if(req.readyState == 4) {
                 if(req.status == 200) {
                     userInfo = JSON.parse(req.responseText);
+                    console.log(userInfo);
                     return userInfo;
                 }
             }
@@ -26,7 +27,6 @@ window.onload = function() {
     
     //잠금모드 로그인 이벤트리스너
     function lockedLoginEvent(e) {
-        e.preventDefault();
         var pwValue = pwField.value;
         var userInfo = getUserInfoJson();
         if(pwValue == userInfo.password) {
