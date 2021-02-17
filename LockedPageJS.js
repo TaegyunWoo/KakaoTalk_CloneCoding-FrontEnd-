@@ -42,6 +42,7 @@ window.onload = function() {
     //엔터 이벤트
     function enterLoginEvent(e) {
         if(e.key == "Enter") {
+            e.preventDefault();
             lockedLoginEvent(e);
         }
     }
