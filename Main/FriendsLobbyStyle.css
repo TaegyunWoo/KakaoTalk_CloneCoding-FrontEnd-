@@ -33,6 +33,10 @@ img.menu.user {
     
 }
 
+#friendHeader {
+    height: 50px;
+}
+
 #friendHeader > p.title {
     float: left;
     font-weight: bold;
