@@ -16,7 +16,7 @@ function person(n, p, s) {
         profileElement.setAttribute("src", this.profile);
         stateMessageElement.innerHTML = this.stateMessage;
         profileDiv.appendChild(profileElement);
-        nameElement.setAttribute("class", "name");
+        friendProduct.setAttribute("class", "friendProduct");
         
         
         friendProduct.appendChild(document.createElement("br"));
@@ -71,11 +71,15 @@ function person(n, p, s) {
 
 //친구 찾기
 function findFriend(name) {
-    var friends = document.getElementsByClassName("name");
-    var findedFriends = new Array();
+    var friends = document.getElementsByClassName("friendProduct");
+    var reg = new RegExp(name);
+    //다시 보이게
     for(var i=0; i<friends.length; i++) {
-        var reg = new RegExp(name);
-        if( !reg.test(friends[i].innerHTML) ) {
+        friends[i].style.display = "block";
+    }
+
+    for(var i=0; i<friends.length; i++) {
+        if( !reg.test(friends[i].children[2].innerHTML) ) {
             friends[i].style.display = "none";
         }
     }
@@ -88,7 +92,6 @@ window.onload = function() {
     
     //친구추가 이벤트
     var addFriendElement = document.getElementsByClassName("addFriend")[0];
-    console.log(addFriendElement);
     addFriendElement.addEventListener("click", addFriendEvent, false);
     function addFriendEvent(e) {
         var name = prompt("이름을 입력하세요.");
@@ -99,9 +102,29 @@ window.onload = function() {
         friend.addFriend();
     }
     
-    //친구찾기 검색바 생성
-    
+    //친구찾기 검색바 보이기
+    var searchBarElement = document.getElementById("findTextField");
+    searchBarElement.style.display = "none";
+    var finderElement = document.getElementsByClassName("header finding")[0];
+    finderElement.addEventListener("click", showSearchBar, false);
+    function showSearchBar(e) {
+        if(searchBarElement.style.display == "none") {
+            searchBarElement.style.display = "inline";
+        } else {
+            searchBarElement.style.display = "none";
+        }
+    }
 
     //친구찾기 검색바 제거
-    
+    searchBarElement.addEventListener("focusout", hideSearchBar, false);
+    function hideSearchBar(e) {
+        searchBarElement.style.display = "none";
+    }
+
+    //검색이벤트
+    searchBarElement.addEventListener("keyup", searchFriendEvent, false);
+    function searchFriendEvent(e) {
+        var value = searchBarElement.value;
+        findFriend(value);
+    }
 };

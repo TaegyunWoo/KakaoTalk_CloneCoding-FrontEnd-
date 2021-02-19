@@ -25,6 +25,13 @@ img.menu.user {
     margin-left: 20px;
 }
 
+#findTextField {
+    float: right;
+    margin-top: 10px;
+    display: none;
+    
+}
+
 #menu > img.menu {
     width: 40px;
     height: 40px;
