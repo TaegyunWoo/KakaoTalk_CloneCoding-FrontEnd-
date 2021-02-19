@@ -13,7 +13,30 @@ window.onload = function() {
         location.replace("../Setting/Setting.html");
     }
 
+    //채팅박스 추가
     addChatBoxWithCY();
+
+    
+    //정렬순서창 숨기기 이벤트
+    var organizeDivElement = document.getElementById("organizeMenu");
+    organizeDivElement.style.display = "none";
+    organizeDivElement.addEventListener("click", hideOrgaMenu, false);
+    function hideOrgaMenu(e) {
+        organizeDivElement.style.display = "none";
+    }
+    
+    //정렬순서창 보이기 이벤트
+    var showOrgaBtnElement = document.getElementsByClassName("showOrganize");
+    showOrgaBtnElement[0].addEventListener("click", showOrganizeMenuEvent, false);
+    showOrgaBtnElement[1].addEventListener("click", showOrganizeMenuEvent, false);
+    function showOrganizeMenuEvent(e) {
+        organizeDivElement.style.display = "block";
+    }
+    
+    
+    //새로운 채팅방 생성 이벤트
+    var addNewChatBoxElement = document.getElementsByClassName("header addChat")[0];
+    addNewChatBoxElement.addEventListener("click", addChatBoxWithCY, false);
 }
 
 function addChatBoxWithCY() {

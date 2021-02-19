@@ -3,6 +3,9 @@ body {
     height: 700px;
     margin: 0 auto;
     margin-top: 5%;
+    border-style: solid;
+    border-color: rgb(255, 235, 51);
+    border-width: thin;
 }
 
 #main {
@@ -32,12 +35,16 @@ img.menu.user {
     
 }
 
+img.header {
+    cursor: pointer;
+}
+
 #menu > img.menu {
     width: 40px;
     height: 40px;
     margin: 40px auto;
     display: block;
-    
+    cursor: pointer;
 }
 
 #friendHeader {

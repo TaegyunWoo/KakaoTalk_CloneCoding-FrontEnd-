@@ -3,6 +3,9 @@ body {
     height: 700px;
     margin: 0 auto;
     margin-top: 5%;
+    border-style: solid;
+    border-color: rgb(255, 235, 51);
+    border-width: thin;
 }
 
 #main {
@@ -30,7 +33,7 @@ img.menu.user {
     height: 40px;
     margin: 40px auto;
     display: block;
-    
+    cursor: pointer;
 }
 
 #chatHeader {
@@ -45,13 +48,38 @@ img.menu.user {
     display: table-cell;
 }
 
-div.title > p {
-    display: table-cell;
+img.header.addChat {
+    cursor: pointer;
 }
 
-div.title :last-child {
+div.title > p {
+    display: table-cell;
+    cursor: pointer;
+}
+
+p#down {
     font-size: 7px;
     vertical-align: middle;
+}
+
+div#organizeMenu {
+    display: none;
+    border-style: solid;
+    border-width: thin;
+    position: absolute;
+    top: 130px;
+    left: 625px;
+    background-color: darkgray;
+    width: 170px;
+    
+}
+
+li {
+    font-size: 15px;
+    width: 140px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .header {
