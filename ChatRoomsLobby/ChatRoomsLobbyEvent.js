@@ -28,6 +28,7 @@ function addChatBoxWithCY() {
     var chatName = document.createElement("p");
     var chatContent = document.createElement("p");
     var chatTime = document.createElement("p");
+    var chatTitle = document.createElement("div");
 
     //요소 설정
     chatProfile.setAttribute("src", profile);
@@ -37,17 +38,27 @@ function addChatBoxWithCY() {
 
     //요소 결합
     chatProfileDiv.appendChild(chatProfile);
+    chatTitle.appendChild(chatName);
+    chatTitle.appendChild(chatTime);
+
     chatBox.appendChild(chatProfileDiv);
-    chatBox.appendChild(chatName);
-    chatBox.appendChild(chatTime);
+    chatBox.appendChild(chatTitle);
     chatBox.appendChild(chatContent);
 
     //요소 스타일 적용
     setChatBoxStyle(chatBox);
+    
+    //채팅박스 추가
+    var chatListElement = document.getElementById("chatList")
+    chatListElement.append(chatBox); 
+}
+
+function setChatBoxStyle(chatBox) {
     var profileDiv = chatBox.children[0];
-    var name = chatBox.children[1];
-    var time = chatBox.children[2];
-    var content = chatBox.children[3];
+    var title = chatBox.children[1];
+    var name = title.children[0];
+    var time = title.children[1];
+    var content = chatBox.children[2];
 
     chatBox.style.height = "80px";
 
@@ -63,7 +74,11 @@ function addChatBoxWithCY() {
     profileDiv.children[0].style.width = "100%";
     profileDiv.children[0].style.height = "100%";
     profileDiv.children[0].style.objectFit = "cover";
-
+    
+    title.style.height = "27px";
+    title.style.width = "340px";
+    title.style.display = "inline-block";
+    
     name.style.display = "inline-block";
     name.style.float = "left";
     name.style.fontWeight = "bold";
@@ -82,16 +97,6 @@ function addChatBoxWithCY() {
     content.style.color = "darkgray";
     content.style.float = "left";
     content.style.marginTop = "0";
-    
-    
-
-
-    
-    //채팅박스 추가
-    var chatListElement = document.getElementById("chatList")
-    chatListElement.append(chatBox); 
-}
-
-function setChatBoxStyle(chatBox) {
-
+    content.style.width = "300px";
+    content.style.textOverflow = "ellipse";
 }
