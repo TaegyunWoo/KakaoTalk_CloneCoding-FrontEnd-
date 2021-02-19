@@ -89,7 +89,24 @@ window.onload = function() {
     //나 추가
     var me = new person("우태균", "../images/profile.png", "열심히 공부합시다!");
     me.addFriend(true);
+
+    //채영 추가
+    var chaeyoung = new person("나채영", "../images/heart.png", "태균아 사랑해♥");
+    chaeyoung.addFriend();
     
+    //채팅로비 이동 이벤트
+    var chatElement = document.getElementsByClassName("menu chat")[0];
+    chatElement.addEventListener("click", moveChatLobbyEvent, false);
+    function moveChatLobbyEvent(e) {
+        location.replace("../ChatRoomsLobby/ChatRoomsLobby.html");
+    }
+    //설정창 이동 이벤트
+    var settingElement = document.getElementsByClassName("menu dots")[0];
+    settingElement.addEventListener("click", moveSettingEvent, false);
+    function moveSettingEvent(e) {
+        location.replace("../Setting/Setting.html");
+    }
+
     //친구추가 이벤트
     var addFriendElement = document.getElementsByClassName("addFriend")[0];
     addFriendElement.addEventListener("click", addFriendEvent, false);

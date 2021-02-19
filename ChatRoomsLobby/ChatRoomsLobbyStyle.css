@@ -35,6 +35,7 @@ img.menu.user {
 
 #chatHeader {
     height: 50px;
+    margin-bottom: 20px;
 }
 
 #chatHeader > div.title {
