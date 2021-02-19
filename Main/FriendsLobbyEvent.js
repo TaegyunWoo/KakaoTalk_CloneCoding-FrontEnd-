@@ -110,6 +110,7 @@ window.onload = function() {
     function showSearchBar(e) {
         if(searchBarElement.style.display == "none") {
             searchBarElement.style.display = "inline";
+            searchBarElement.focus();
         } else {
             searchBarElement.style.display = "none";
         }
@@ -119,6 +120,12 @@ window.onload = function() {
     searchBarElement.addEventListener("focusout", hideSearchBar, false);
     function hideSearchBar(e) {
         searchBarElement.style.display = "none";
+        
+        //다시 보이게
+        var friends = document.getElementsByClassName("friendProduct");
+        for(var i=0; i<friends.length; i++) {
+            friends[i].style.display = "block";
+        }
     }
 
     //검색이벤트
